@@ -1,3 +1,10 @@
+## [0.0.3+6] - 8/02/2023.
+
+* Added video loop
+* Added video autoplay
+* Added show player controls
+* Added show social icons
+
 ## [0.0.3+2] - 30/01/2022.
 
 * fix typo in `README.md`
