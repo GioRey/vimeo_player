@@ -14,6 +14,10 @@ import 'package:webview_flutter/webview_flutter.dart';
 ///
 class VimeoPlayer extends StatelessWidget {
   final String videoId;
+  final bool loopVideo;
+  final bool autoPlay;
+  final bool showControls;
+  final bool showSocialIcons;
 
   ///constructor
   ///
@@ -22,6 +26,10 @@ class VimeoPlayer extends StatelessWidget {
   const VimeoPlayer({
     Key? key,
     required this.videoId,
+    this.loopVideo = false,
+    this.autoPlay = false,
+    this.showControls = true,
+    this.showSocialIcons = true,
   }) : super(key: key);
 
   @override
@@ -54,7 +62,7 @@ class VimeoPlayer extends StatelessWidget {
              </head>
              <body>
                 <iframe 
-                src="https://player.vimeo.com/video/$videoId?loop=0&autoplay=0" 
+                src="https://player.vimeo.com/video/$videoId?loop=${loopVideo ? 1 : 0}&autoplay=${autoPlay ? 1 : 0}&title=0&sidedock=${showSocialIcons ? 1 : 0}controls=${showControls ? 1 : 0}" 
                 width="100%" height="100%" frameborder="0" allow="fullscreen" 
                 allowfullscreen></iframe>
              </body>
